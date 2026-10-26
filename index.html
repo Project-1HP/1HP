@@ -4,7 +4,905 @@
     <title>My GitHub Pages Site</title>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>Hosted with GitHub Pages.</p>
+    <h1>Governance & Compliance Policy Handbook · Federal Governance Edition</h1>
+    <p> Humanitarian Project (+1HP)
+
+
+
+Statute-to-Policy Matrix & Governance Capacity Framework
+
+Document ID: HP-GOV-001 · Version 1.0 · Conceptual specification · October 25, 2026
+
+Purpose
+
+Establish a technical and administrative framework for tracing legal authority through policy, procedures, implementation evidence, oversight, audit, corrective action, and measurable public outcomes.
+
+Scope
+
+United States federal governance as the initial reference jurisdiction, with applicability determined by the specific agency, program, system, funding instrument, and governing authority.
+
+Implementation status: Proposed. This handbook specifies a target architecture and operational requirements. It does not assert that Humanitarian Project (+1HP) has an established federal mandate, authorized institutional role, operational committee, deployed telemetry service, or completed compliance assessment.
+
+ArchitectureData modelAudit controlsAcceptance tests
+
+ Document control and interpretation
+
+| Field                 | Specification                                                                   |
+| --------------------- | ------------------------------------------------------------------------------- |
+| Document owner        | Proposed +1HP governance function                                               |
+| Approval authority    | To be designated by the organization implementing the framework                 |
+| Review responsibility | Proposed policy, technical, legal, and independent-assurance roles              |
+| Primary users         | Policy authors, auditors, analysts, system administrators, authorized reviewers |
+| Baseline status       | Draft specification; not an approved federal policy                             |
+| Change control        | Versioned revisions with documented rationale, approval, and effective date     |
+
+ Status vocabulary
+
+Verified
+
+Verified external requirement or fact
+
+Supported by an identified source and an appropriate verification process. Verification applies only to the specific proposition examined.
+
+Proposed
+
+Proposed capability or control
+
+A design requirement, policy recommendation, data structure, or future operational capability that has not been demonstrated as implemented.
+
+Unverified
+
+Unverified assertion
+
+A claim that has not yet been supported by sufficient evidence. It must not be represented as an established fact.
+
+Not assessed
+
+Unknown implementation or compliance status
+
+No adequate assessment evidence is available to determine whether the capability or control is operating effectively.
+
+These labels describe evidence and implementation status; they do not replace legal determinations, formal audit opinions, or an applicable standard of proof.
+
+ Chapter 1 — Governance policy
+
+
+        1.1 Policy statement
+
+Humanitarian Project (+1HP) adopts the following as a proposed governance design principle:
+
+> Statutes establish authority. Policies establish standards. Procedures establish execution. Oversight establishes accountability. Measurement establishes evidence. Modernization establishes continuous improvement.
+
+The framework shall maintain a traceable relationship between:
+
+* The authority supporting an activity.
+
+* The policy requirement derived from that authority.
+
+* The procedure and control implementing the requirement.
+
+* The evidence showing what occurred.
+
+* The assessment of whether the requirement was met.
+
+* The decision-maker authorized to act on the assessment.
+
+* The corrective action and its subsequent verification.
+
+A policy requirement must not be treated as legally binding merely because it appears in this handbook. Before implementation in a federal organization, applicable law, agency-specific requirements, delegated authority, and approval procedures must be established.
+
+
+        1.2 Governance objectives
+
+* Legal integrity: identify the authority, jurisdiction, scope, and limitations governing each control.
+
+* Epistemic integrity: distinguish claims, source records, observations, verified facts, inferences, and disputed findings.
+
+* Institutional integrity: make decisions, approvals, responsibilities, and records traceable.
+
+* Scientific integrity: define measurement methods, uncertainty, calibration, reproducibility, and limitations.
+
+* Procurement integrity: maintain traceability from funding authority through award, performance, payment, and evaluation.
+
+* Financial integrity: preserve evidence of authorization, expenditure, reconciliation, and remediation.
+
+* Modernization integrity: ensure changes are authorized, measured, documented, and evaluated against the intended outcomes.
+
+
+        1.3 Scope boundaries
+
+The framework is intended to support governance design and assurance. It does not itself:
+
+* confer subpoena, investigative, adjudicative, regulatory, or enforcement powers;
+
+* create a legally recognized whistleblower protection mechanism;
+
+* authorize access to federal systems or protected records;
+
+* replace agency records schedules, procurement procedures, financial controls, or security authorization;
+
+* establish that a suspected discrepancy constitutes fraud, misconduct, or a statutory violation;
+
+* confer authority on the proposed Epistemic Committee to overrule officials or make binding legal findings.
+
+
+        Chapter 2 — Federal authority alignment
+
+This chapter defines how the conceptual domains should be connected to actual federal authorities during a later legal and compliance review. It is an architecture and requirements mapping, not a claim that every authority applies to every organization.
+
+The following external references are useful design anchors:
+
+* The [GAO Standards for Internal Control in the Federal Government (Green Book)](https://www.gao.gov/greenbook?utm_source=chatgpt.com) provides a federal internal-control framework. The 2025 revision is effective beginning in fiscal year 2026.
+
+* The [Federal Records Act authorities summarized by the National Archives](https://www.archives.gov/about/laws/fed-agencies.html?utm_source=chatgpt.com) describe federal agency duties concerning records creation, preservation, management, and safeguards.
+
+* The [Freedom of Information Act](https://www.archives.gov/about/laws/foia.html?utm_source=chatgpt.com), codified at 5 U.S.C. § 552, governs access to qualifying federal agency records subject to statutory requirements and exemptions.
+
+* The [NIST security-control reference used by FedRAMP](https://www.fedramp.gov/2026/reference/controls/?utm_source=chatgpt.com) provides control families relevant to access, audit, assessment, incident response, and system integrity. FedRAMP-specific requirements apply only where relevant to the system and authorization context.
+
+* The [GAO Federal Information System Controls Audit Manual](https://www.gao.gov/fiscam?utm_source=chatgpt.com) provides an audit reference for federal information-system controls. GAO identifies its 2026 revision as effective for specified engagements beginning October 1, 2026.
+
+
+        2.1 Statute-to-policy mapping requirements
+
+Every authority entry in the eventual compliance register must include the following fields.
+
+| Field                | Required content                                                                  |
+| -------------------- | --------------------------------------------------------------------------------- |
+| Authority ID         | Stable identifier for the legal or policy source                                  |
+| Citation             | Exact statutory, regulatory, or policy reference                                  |
+| Issuing authority    | Congress, agency, authorized official, or standards body                          |
+| Jurisdiction         | Federal, state, local, or other                                                   |
+| Applicability        | Agency, program, information system, transaction, or covered population           |
+| Requirement          | Specific obligation or permission relevant to the control                         |
+| Legal status         | Binding authority, applicable agency directive, guidance, or proposed design rule |
+| Policy mapping       | Internal policy requirement implementing the authority                            |
+| Control mapping      | Technical or administrative control addressing the requirement                    |
+| Evidence requirement | Records needed to demonstrate design or operation                                 |
+| Owner                | Official or role responsible for implementation                                   |
+| Review date          | Date applicability and source currency were last checked                          |
+| Limitations          | Exceptions, qualifications, dependencies, or unresolved questions                 |
+
+Mandatory rule: A reference to a law is not sufficient evidence of compliance. The register must identify the actual obligation, establish applicability, and link it to a control and assessment method.
+
+
+        2.2 Domain-to-control alignment
+
+| Domain                             | Proposed control family                                      | Primary evidence                                                       |
+| ---------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| Full Faith                         | Records governance, accountability, authorization            | Approved procedures, decision records, record indexes                  |
+| Federal Truth                      | Evidence provenance, records access, information quality     | Source records, verification logs, disclosure decisions                |
+| Whistleblower Protection           | Confidential reporting, restricted access, referral tracking | Access logs, receipt acknowledgments, authorized case records          |
+| Procurement Integrity              | Competition, conflicts, award traceability, performance      | Solicitation, evaluation, award, invoice, and acceptance records       |
+| Financial Integrity                | Authorization, reconciliation, expenditure control           | Funding records, transaction ledgers, reconciliations                  |
+| Research Governance                | Protocol control, ethics review, reproducibility             | Approved protocols, methods, review decisions, study records           |
+| Rehabilitation Services            | Program eligibility, service delivery, outcome measurement   | Authorized service records and appropriately protected outcome data    |
+| Public Health                      | Data quality, authorized access, outcome evaluation          | Defined datasets, methods, aggregate outcome measures                  |
+| Environmental Integrity            | Inspection, hazard tracking, remediation                     | Inspection evidence, findings, corrective-action records               |
+| Security and Information Integrity | Access, audit, incident response, system integrity           | Authentication events, security logs, incident and remediation records |
+| Epistemic Committee                | Reviewer independence, evidence standards, reasoned findings | Charter, conflict declarations, review packets, decisions              |
+| Modernization Integrity            | Change management, risk reassessment, performance evaluation | Change requests, approvals, baseline comparisons, test results         |
+
+These are proposed control mappings. They do not independently establish legal obligations in any particular agency.
+
+
+        Chapter 3 — Institutional roles and separation of duties
+
+
+        3.1 Proposed responsibility model
+
+The implementation must identify actual personnel or authorized roles before live use.
+
+| Role                         | Responsibility                                               | Authority boundary                                                |
+| ---------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------- |
+| Policy owner                 | Maintains policy, objectives, and revision history           | Cannot create legal authority through policy wording              |
+| Legal or compliance reviewer | Assesses authority, applicability, and conflicts             | Provides review within assigned competence and delegation         |
+| Records officer              | Coordinates applicable records-management requirements       | Follows agency records schedules and authorized disposition rules |
+| System owner                 | Defines system scope, risks, and operating requirements      | Acts within assigned system authority                             |
+| Data steward                 | Defines data meaning, quality, provenance, and permitted use | Cannot silently alter source evidence                             |
+| Telemetry operator           | Monitors system events and service performance               | Observations alone do not establish misconduct                    |
+| Auditor or assessor          | Tests control design and operating effectiveness             | Reports within an independent, authorized scope                   |
+| Epistemic Committee          | Proposed independent methodological review function          | Advisory unless a valid charter grants further authority          |
+| Corrective-action owner      | Implements approved remediation                              | Cannot close an action solely on its own unsupported assertion    |
+| Approving official           | Authorizes decisions within a valid delegation               | Must not exceed the scope of delegated authority                  |
+
+
+        3.2 Separation-of-duties requirements
+
+The design should prevent one person from silently controlling every stage of a consequential decision.
+
+At minimum:
+
+* The author of a material finding should not be its only independent reviewer.
+
+* A person requesting a policy exception should not be the sole approver of that exception.
+
+* A system administrator should not be able to erase the only audit evidence of their own privileged actions.
+
+* A procurement evaluator's conflicts should be recorded and reviewed under applicable rules.
+
+* A corrective-action owner should provide evidence for closure that can be independently assessed.
+
+* Emergency access must be documented, time-bounded where feasible, and reviewed after use.
+
+Where staffing makes full separation impracticable, the organization must document the compensating control and residual risk.
+
+
+        Chapter 4 — Technical data model
+
+
+        4.1 Architecture
+
+The proposed information model separates legal authority, policy implementation, operational observations, evidentiary findings, and governance decisions.
+
+1
+
+Authority Registry
+
+Sources, citations, applicability and version history
+
+2
+
+Policy and Control Registry
+
+Requirements, owners, procedures and test definitions
+
+3
+
+Evidence and Records Index
+
+Source identifiers, provenance, integrity and retention references
+
+4
+
+Telemetry and Metrics Store
+
+Events, timestamps, counters, latency and quality measurements
+
+5
+
+Review and Findings Register
+
+Methods, reviewers, classifications and limitations
+
+6
+
+Corrective Action Register
+
+Remediation owners, approvals, tests and closure evidence
+
+Proposed logical architecture. The arrows indicate relationships and feedback, not an implemented data pipeline.
+
+The model should use stable identifiers and explicit relationships rather than relying on free-text labels alone.
+
+
+        4.2 Core entities
+
+| Entity            | Primary key    | Required attributes                                                                   |
+| ----------------- | -------------- | ------------------------------------------------------------------------------------- |
+| Authority         | authority_id   | Citation, issuer, jurisdiction, source version, applicability status                  |
+| PolicyRequirement | requirement_id | Objective, policy text, authority links, effective dates                              |
+| Control           | control_id     | Control description, owner, procedure, risk, assessment method                        |
+| System            | system_id      | Scope, owner, environment, authorization status                                       |
+| EvidenceItem      | evidence_id    | Source reference, collection time, provenance, integrity status, access class         |
+| TelemetryEvent    | event_id       | Event type, event time, collection time, source system, measurement and quality flags |
+| MetricDefinition  | metric_id      | Formula, unit, scope, sampling window, thresholds, version                            |
+| Finding           | finding_id     | Proposition tested, classification, rationale, evidence links, reviewer               |
+| Decision          | decision_id    | Decision-maker, authority, decision time, rationale, related finding                  |
+| CorrectiveAction  | action_id      | Finding link, action owner, due date, status, validation evidence                     |
+| Review            | review_id      | Scope, reviewer, methodology, conflicts, dates, report reference                      |
+| ChangeRecord      | change_id      | Previous version, proposed version, reason, risk assessment, approval                 |
+
+
+        4.3 Relationship rules
+
+The logical relationships should support these constraints:
+
+* One authority may support multiple policy requirements.
+
+* A policy requirement may be implemented by multiple controls.
+
+* A control may apply to multiple systems, subject to scope and authorization.
+
+* A finding may reference multiple evidence items.
+
+* An evidence item may support, qualify, or contradict more than one proposition.
+
+* A decision must reference the applicable authority or delegation and its supporting record.
+
+* A corrective action must reference the finding or control deficiency that prompted it.
+
+* A closure decision must link to evidence of remediation and an assessment result.
+
+* Changes to authority mappings, metric definitions, and control configurations must retain their previous versions.
+
+The system should permit a finding to remain inconclusive and a corrective action to remain open. It must not force every workflow to produce a positive compliance determination.
+
+
+        4.4 Minimum record envelope
+
+Each material governance record should include:
+
+| Attribute           | Definition                                                                   |
+| ------------------- | ---------------------------------------------------------------------------- |
+| record_id           | Unique, stable identifier                                                    |
+| record_type         | Authority, evidence, event, finding, decision, action, or other defined type |
+| created_at          | Record creation timestamp                                                    |
+| observed_at         | Time the underlying event occurred, if applicable                            |
+| ingested_at         | Time the system received the data                                            |
+| source_id           | Originating system, document, or reporting channel                           |
+| actor_id            | Authorized actor or service identity, subject to privacy restrictions        |
+| schema_version      | Version of the data structure                                                |
+| classification      | Applicable sensitivity or access classification                              |
+| integrity_metadata  | Hash, signature, or other applicable integrity evidence                      |
+| retention_reference | Applicable records schedule or retention rule                                |
+| relationship_ids    | References to related authorities, evidence, findings, and actions           |
+
+Missing values should be represented explicitly as unknown, not applicable, withheld, or not collected, as appropriate. A missing timestamp must not be fabricated; an inferred timestamp must be marked as inferred.
+
+
+        Chapter 5 — Telemetry definitions and measurement standards
+
+Telemetry is the observation layer of the governance framework. It supplies evidence about system behavior and administrative processes; it does not, by itself, explain why an event occurred or establish legal responsibility.
+
+
+        5.1 Terminology
+
+| Term                     | Operational definition                                                                                                             | Required treatment                                                   |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Telemetry                | Individual observations emitted or collected from an operational process, record system, or service                                | Preserve source, timestamps, collection method, and quality          |
+| Telemetrics              | Quantitative analysis of telemetry observations                                                                                    | Record formula, sampling window, units, and uncertainty              |
+| Calibrations             | Documented adjustment of a measurement method, benchmark, threshold, or model                                                      | Preserve prior settings, justification, approval, and effective date |
+| Institutional Congestion | Administrative delay, queue accumulation, resource saturation, or processing friction                                              | Define the population, start and end events, and exclusions          |
+| Calibration Drift        | Change in the relationship between intended requirements and observed execution, or between a measurement system and its reference | Distinguish policy drift, implementation drift, and instrument drift |
+| Evidence Provenance      | Information establishing where evidence originated and how it was collected, transferred, transformed, and reviewed                | Maintain a traceable history of source and transformations           |
+| Epistemic Finding        | A documented assessment of a specified proposition against identified evidence and a stated method                                 | Include uncertainty, limitations, counterevidence, and reviewer      |
+| Corrective Action        | An authorized action addressing a documented deficiency, risk, or finding                                                          | Track implementation and independently assess closure                |
+
+These are operational definitions proposed for +1HP. They do not purport to replace specialized scientific definitions, agency standards, or statutory terminology.
+
+
+        5.2 Minimum telemetry event schema
+
+The following is an illustrative JSON data contract for a future implementation. It is a specification example, not a record from a deployed system.
+
+```json
+
+{
+  "event_id": "evt-example-0001",
+  "event_type": "workflow.completed",
+  "source_id": "system-example",
+  "observed_at": "2026-10-25T14:30:00Z",
+  "ingested_at": "2026-10-25T14:30:03Z",
+  "schema_version": "1.0",
+  "subject_ref": "workflow-example-001",
+  "measurement": {
+    "name": "processing_duration",
+    "value": 180,
+    "unit": "seconds"
+  },
+  "quality": {
+    "timestamp_quality": "source-reported",
+    "completeness": "complete",
+    "validation_status": "pending"
+  },
+  "provenance": {
+    "source_record_ref": "record-example-001",
+    "transformation_version": "1.0",
+    "integrity_status": "not_verified"
+  },
+  "access_class": "internal",
+  "retention_reference": "TBD"
+}
+```
+
+The identifiers above are placeholders. The timestamps and measurement illustrate the schema and are not assertions about an actual event.
+
+
+        Required validation rules
+
+* Each event has a unique identifier within its defined namespace.
+
+* Event time and ingestion time are stored separately.
+
+* Time zone and clock-synchronization assumptions are documented.
+
+* Units are explicit; values without known units cannot silently enter a quantitative metric.
+
+* Source-reported, calculated, estimated, and inferred values are distinguishable.
+
+* Late, duplicated, missing, malformed, and out-of-order events are detected and recorded.
+
+* Corrections create a traceable amendment or replacement record rather than silently overwriting material evidence.
+
+* Personal and sensitive information is minimized and access-controlled.
+
+* Retention and disposition follow the applicable approved schedule, preservation duties, and legal holds.
+
+* A failed integrity check triggers a recorded exception; it does not automatically prove malicious alteration.
+
+### 5.3 Institutional congestion metrics
+
+The following are proposed metrics for evaluating administrative capacity.
+
+| Metric                         | Definition                                                                            | Unit                    |
+| ------------------------------ | ------------------------------------------------------------------------------------- | ----------------------- |
+| Queue depth                    | Number of eligible items awaiting processing at a specified time                      | Items                   |
+| Processing latency             | Elapsed time between defined workflow start and completion events                     | Seconds, hours, or days |
+| Median latency                 | Median of valid processing durations for a defined population and period              | Time                    |
+| 95th-percentile latency        | Processing duration at the 95th percentile of the defined sample                      | Time                    |
+| Backlog age                    | Current time minus the recorded receipt time of an unfinished item                    | Time                    |
+| Throughput                     | Number of eligible items completed per defined interval                               | Items per interval      |
+| Rework rate                    | Items requiring repeat processing divided by eligible completed items                 | Percentage              |
+| Exception rate                 | Eligible events that violate a specified validation or processing rule                | Percentage              |
+| Evidence completeness          | Required evidence fields or artifacts present divided by required fields or artifacts | Percentage              |
+| Corrective-action closure time | Elapsed time between an authorized action's opening and validated closure             | Time                    |
+
+Every metric must specify its denominator, eligibility rules, exclusions, reporting period, aggregation method, and treatment of missing observations.
+
+For example, average latency calculated only from completed cases can understate congestion if older cases remain unfinished. Therefore, reports should display backlog age and unfinished-case counts alongside completed-case latency.
+
+
+        5.4 Calibration controls
+
+A calibration record must include:
+
+* the metric or threshold being changed;
+
+* the previous and proposed values;
+
+* the reason for the change;
+
+* supporting evidence and uncertainty;
+
+* the approver and applicable authority;
+
+* the implementation date;
+
+* the expected impact;
+
+* a rollback or reassessment condition;
+
+* the post-change validation result.
+
+Historical observations must not be rewritten merely because a new threshold or measurement formula has been adopted.
+
+
+        Chapter 6 — Audit controls and evidence integrity
+
+
+        6.1 Control objectives
+
+The proposed audit-control baseline should address the following objectives.
+
+AC-01
+
+Authority traceability
+
+Every material policy requirement links to an applicable authority or is explicitly labeled a proposed internal requirement.
+
+AC-02
+
+Evidence provenance
+
+Every material finding links to identified evidence and a documented verification method.
+
+AC-03
+
+Access accountability
+
+Access to sensitive evidence, privileged operations, and material changes is authorized and logged.
+
+AC-04
+
+Audit-log protection
+
+Audit records are protected against unauthorized modification, deletion, and access.
+
+AC-05
+
+Independent assessment
+
+Control effectiveness is assessed by an appropriately independent and authorized reviewer.
+
+AC-06
+
+Records preservation
+
+Applicable records schedules, preservation duties, and legal holds govern retention and disposition.
+
+AC-07
+
+Change control
+
+Material policy, code, metric, and configuration changes are versioned, reviewed, approved, and tested.
+
+AC-08
+
+Corrective-action verification
+
+Closure requires documented evidence and a defined validation method.
+
+AC-09
+
+Privacy and disclosure
+
+Collection, access, sharing, and disclosure follow applicable authority and privacy restrictions.
+
+AC-10
+
+Continuity and recovery
+
+Backups, restoration, and continuity procedures are tested against documented recovery objectives.
+
+These control objectives are proposed requirements. They should be mapped to the relevant agency's security, privacy, records-management, and internal-control baselines before operational adoption. NIST SP 800-53 provides a structured reference for security and privacy controls, while GAO's Green Book provides a broader federal internal-control framework.
+
+
+        6.2 Audit event requirements
+
+The system should log, where applicable:
+
+* successful and failed authentication;
+
+* access to protected evidence and restricted case records;
+
+* changes to authority mappings and policy requirements;
+
+* metric and threshold changes;
+
+* exports, disclosures, and transfers of controlled information;
+
+* privileged administrative actions;
+
+* review decisions and approval events;
+
+* evidence-integrity failures;
+
+* corrective-action status changes;
+
+* retention, preservation, and disposition actions.
+
+Audit logs must not indiscriminately duplicate sensitive content. They should capture enough metadata to establish accountability while minimizing unnecessary exposure of personal information.
+
+
+        6.3 Evidence chain of custody
+
+For evidence requiring heightened integrity assurance, the proposed process is:
+
+Identify source and collection authority
+
+Capture original or source reference
+
+Record collector, time, and method
+
+Compute integrity metadata where appropriate
+
+Store under authorized access and retention controls
+
+Record every transfer or transformation
+
+Verify integrity before material reliance
+
+Document review and disposition
+
+A cryptographic hash can help detect whether content differs from a previously hashed version. It does not independently prove that the source was authentic, that collection was lawful, that the original content was accurate, or that the person attributed to an action actually performed it.
+
+Where stronger assurance is required, the design may use digital signatures, trusted timestamps, independently protected logs, and documented custody procedures.
+
+
+        6.4 Retention and preservation
+
+The implementation must not use a universal retention period for all governance data.
+
+The applicable retention reference should identify the approved records schedule and the rules governing preservation, access, disposition, and legal holds. Federal records obligations arise under applicable federal records law and agency procedures; they cannot be overridden by a generic application setting.
+
+A deletion operation must be blocked or appropriately suspended when a controlling preservation requirement prohibits disposition.
+
+
+  Chapter 7 — Procurement and financial integrity controls
+
+
+        7.1 Procurement traceability
+
+The proposed procurement data chain is:
+
+Appropriation → Funding authority → Requirement → Solicitation or authorized procurement method → Evaluation → Award → Performance → Invoice → Payment → Audit → Outcome evaluation → Public value.
+
+Each transition should link to the applicable source records and the official or system responsible for the action.
+
+Required evidence includes, as applicable:
+
+* funding availability and authorization;
+
+* documented requirements and acquisition planning;
+
+* solicitation and competition records;
+
+* evaluation criteria, evaluations, and conflict-of-interest controls;
+
+* award approval and contract terms;
+
+* performance and deliverable acceptance;
+
+* invoice review and payment authorization;
+
+* modifications and change approvals;
+
+* audit findings and corrective actions;
+
+* documented outcome evaluation.
+
+The procurement controls must be mapped to the actual applicable Federal Acquisition Regulation (FAR) provisions, agency supplements, funding conditions, and acquisition method. This handbook does not establish that every listed procurement artifact is required for every transaction.
+
+
+        7.2 Financial control requirements
+
+| Control ID | Requirement                                                        | Evidence                               |
+| ---------- | ------------------------------------------------------------------ | -------------------------------------- |
+| FIN-01     | Verify that expenditure is within applicable funding authority     | Funding and authorization records      |
+| FIN-02     | Reconcile recorded transactions against appropriate source records | Reconciliation reports                 |
+| FIN-03     | Document approvals and applicable separation of duties             | Approval and access logs               |
+| FIN-04     | Track financial findings through remediation                       | Finding and corrective-action records  |
+| FIN-05     | Preserve the basis for adjustments and corrections                 | Versioned adjustment records           |
+| FIN-06     | Evaluate financial and program outcomes separately                 | Financial reports and outcome measures |
+
+A cost variance, unusual transaction, or procurement anomaly is an investigative lead or control exception—not proof of fraud.
+
+
+        Chapter 8 — Epistemic review and committee protocol
+
+
+        8.1 Proposed review mandate
+
+The Epistemic Committee is a conceptual name for an independent evidence-review function within the +1HP framework. Its actual existence, authority, membership, and independence must be established through an appropriate charter before operational use.
+
+Its proposed responsibilities are to:
+
+* identify the precise proposition under review;
+
+* distinguish original evidence from summaries and interpretations;
+
+* verify provenance and methodological adequacy;
+
+* consider contradictory evidence and alternative explanations;
+
+* identify uncertainty, missing information, and conflicts of interest;
+
+* classify the finding under the framework's defined vocabulary;
+
+* record recommendations separately from binding decisions;
+
+* preserve a traceable review record.
+
+
+        8.2 Required finding record
+
+Every material finding should include:
+
+| Field                | Requirement                                                                 |
+| -------------------- | --------------------------------------------------------------------------- |
+| Finding ID           | Unique identifier                                                           |
+| Proposition          | Exact claim or requirement being evaluated                                  |
+| Classification       | Verified, substantiated, inconclusive, unsupported, or refuted              |
+| Evidence set         | References to supporting and contradictory evidence                         |
+| Method               | Verification steps and applicable assessment standard                       |
+| Limitations          | Missing records, uncertainty, sampling limits, and alternative explanations |
+| Reviewer             | Authorized reviewer identity or protected identifier                        |
+| Independence         | Relevant conflicts and how they were addressed                              |
+| Rationale            | Explanation connecting the evidence to the classification                   |
+| Decision status      | Advisory, pending approval, approved, rejected, or superseded               |
+| Reassessment trigger | Conditions requiring reconsideration                                        |
+
+A review finding and an institutional decision are separate records. A recommendation cannot become an authorized action without the required approval.
+
+
+        Chapter 9 — Governance capacity measurement
+
+
+        9.1 Conceptual capacity formula
+
+The original formula is retained:
+
+\\begin{aligned}
+C_{\\text{institutional}}={}&
+F+T+W+E\\\\
+&+P+I+M
+\\end{aligned}
+
+Where is Full Faith, is Federal Truth, is Whistleblower Protection, is Epistemic Review, is Procurement Integrity, is Financial Integrity, and is Modernization Integrity.
+
+This equation defines a conceptual relationship. It does not yet produce a scientifically validated measurement.
+
+If the components use different units or scales, they cannot be meaningfully added without a documented normalization method and defensible weighting model.
+
+
+        9.2 Extended congestion and drift model
+
+The proposed extended model is:
+
+C_{\\text{net}}=
+\\frac{C_{\\text{base}}}
+{F_{\\text{congestion}}\\cdot F_{\\text{drift}}}
+
+For a future quantitative implementation, the following are requirements:
+
+* define a reproducible calculation for ;
+
+* specify the inputs, scale, and normalization of each component;
+
+* establish how missing and unreliable data affect the score;
+
+* define and justify the congestion and drift factors;
+
+* test sensitivity to changes in the factors;
+
+* evaluate whether the multiplicative relationship fits observed outcomes;
+
+* document uncertainty and validation results;
+
+* preserve the metric version used for every published score.
+
+The assumption that both factors are greater than or equal to 1.0 is a proposed mathematical constraint. It is not an established universal property of institutional performance.
+
+
+        9.3 Reporting safeguards
+
+Governance dashboards should display separate measures for:
+
+* legal and policy coverage;
+
+* control design and operating effectiveness;
+
+* evidence completeness and verification status;
+
+* backlog and processing latency;
+
+* open findings and overdue corrective actions;
+
+* financial and procurement exceptions;
+
+* measurement uncertainty;
+
+* data freshness and known gaps.
+
+Do not collapse these measures into a single public score until the scoring model has been validated. A high aggregate score must not conceal a serious legal, security, records-preservation, or evidence-integrity failure.
+
+
+        Chapter 10 — Acceptance tests
+
+The framework is not ready for operational use until the implementing organization has assigned owners, approved the applicable requirements, and demonstrated the required controls.
+
+The following acceptance tests define the proposed minimum.
+
+
+        Acceptance test register
+
+0/12 reviewed
+
+Use the checkboxes to track your review of the requirements. Checking an item records only your selection in this interactive view; it does not execute a test or establish compliance.
+
+AT-01 — Authority traceability
+
+Every active requirement links to an authority or is explicitly labeled as a proposed internal rule.
+
+Required evidence: Authority register and traceability report
+
+AT-02 — Version integrity
+
+A policy or metric revision preserves the prior version, reason, approval, and effective date.
+
+Required evidence: Version history and change record
+
+AT-03 — Evidence provenance
+
+A reviewer can trace a finding to source records and documented transformations.
+
+Required evidence: Sample evidence-chain reconstruction
+
+AT-04 — Finding uncertainty
+
+The workflow supports inconclusive findings without forcing a positive or negative determination.
+
+Required evidence: Controlled test case and resulting record
+
+AT-05 — Audit-log protection
+
+Unauthorized alteration or deletion of protected audit records is prevented or detected and recorded.
+
+Required evidence: Authorized security test report
+
+AT-06 — Access control
+
+Users cannot access restricted evidence outside their approved permissions.
+
+Required evidence: Access-control test results
+
+AT-07 — Telemetry quality
+
+Duplicate, missing, late, malformed, and out-of-order events are handled according to documented rules.
+
+Required evidence: Synthetic test results and exception records
+
+AT-08 — Calibration governance
+
+Threshold changes require a documented reason, version, approval, and validation plan.
+
+Required evidence: Approved calibration change record
+
+AT-09 — Corrective-action closure
+
+A material action cannot be marked validated and closed without required evidence and review.
+
+Required evidence: Workflow test and independent validation
+
+AT-10 — Retention and preservation
+
+Disposition is governed by the applicable schedule and preservation holds.
+
+Required evidence: Records-management test and approved schedule reference
+
+AT-11 — Procurement traceability
+
+A sampled transaction can be traced through the applicable funding, award, performance, and payment records.
+
+Required evidence: Sample transaction audit trail
+
+AT-12 — Capacity metric reproducibility
+
+An independent reviewer can reproduce a reported metric from the same approved input set and formula version.
+
+Required evidence: Recalculation results and versioned metric definition
+
+Copy test registerReset selections
+
+Acceptance decision rule: A test passes only when the defined test has actually been executed, its evidence has been retained, and the result has been reviewed by an authorized person. The interactive checklist is a planning aid, not an audit report.
+
+
+        Chapter 11 — Implementation sequence
+
+* Phase 1 — Authority and scope
+
+    Identify the implementing organization, system boundary, applicable federal authorities, authorized owners, and approval requirements.
+
+* Phase 2 — Governance registry
+
+    Establish the authority, policy, control, evidence, finding, and corrective-action registers.
+
+* Phase 3 — Data and telemetry prototype
+
+    Implement the proposed schemas, validation rules, provenance tracking, and sample metrics using synthetic or otherwise authorized test data.
+
+* Phase 4 — Control testing
+
+    Execute acceptance tests, record deficiencies, assess risks, and remediate failures.
+
+* Phase 5 — Controlled pilot
+
+    Obtain required approvals and conduct a limited pilot with defined access, monitoring, rollback, and evaluation criteria.
+
+* Phase 6 — Operational authorization
+
+    Obtain applicable legal, records-management, privacy, security, procurement, and management approvals before production deployment.
+
+* Phase 7 — Continuous assurance
+
+    Review control effectiveness, telemetry quality, policy changes, audit findings, and outcome measures at documented intervals.
+
+No phase should be marked complete solely because its documentation has been drafted. Completion requires the specified evidence and approval.
+
+### Chapter 12 — Final governance standard
+
+The Statute-to-Policy Matrix shall operate as a traceability and assurance model, not as an independent source of governmental authority.
+
+Its governing relationship is:
+
+Authority → Requirement → Control → Evidence → Verification → Finding → Authorized decision → Corrective action → Reassessment.
+
+The proposed +1HP architecture preserves the supplied conceptual terms—Full Faith, Federal Truth, Whistleblower Protection, Procurement Integrity, Financial Integrity, Epistemic Committee, Telemetry, Telemetrics, Institutional Congestion, Calibration Drift, and Modernization Integrity—while requiring each operational control to have a defined owner, scope, measurement method, evidence trail, and approval path.
+
+The decisive distinction is between what an institution is authorized to do, what its policies require, what its records demonstrate, and what an independent assessment can reasonably conclude.
+
+That distinction is the foundation of an auditable governance capacity framework.
+</p>
 </body>
 </html>
