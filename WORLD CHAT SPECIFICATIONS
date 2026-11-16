@@ -1,0 +1,1083 @@
+### Humanitarian_Project (+1HP)
+
+### WS-WC-001 — World Chat
+
+### Unified Implementation Specification White Sheet
+
+Document ID: WS-WC-001-IMP-03 Version: 0.3 Date: 16 November 2026 Principal / Recteur: Jonathan Edward Bower Engine Backbone: Xenograph Analytics Engine Integrity Architecture: Tri-Layer Integrity Ledger Associated Module: SOS-GEO-INSPECT-01 Framework: Ground Zero™ · Rational Anti-Concentration Integrity
+
+Document Classification: Technical Architecture & Implementation Specification Development Status: Proposed — Engineering Baseline
+
+### 1\. Executive purpose
+
+World Chat is a decentralized, low-bandwidth communication and community economic coordination system designed to preserve essential communication, situational awareness, and transactional continuity during ordinary operations, network degradation, or institutional service interruptions.
+
+The architecture combines:
+
+* Pseudonymous communication and identity.
+
+* Call Card-based interaction and authorization.
+
+* Peer-to-peer and offline message distribution.
+
+* Geographic SOS intelligence.
+
+* Localized micro-economic exchange.
+
+* Analytical market integrity.
+
+* Cryptographic documentary preservation.
+
+The central engineering principle is:
+
+Communication must remain operational independently of analytics, blockchain availability, and centralized institutional infrastructure.
+
+World Chat therefore separates essential messaging from optional economic settlement and analytical processing.
+
+### 2\. System architecture and operational boundaries
+
+### 2.1 Seven primary strata
+
+| ID     | Component           | Function                                              |
+| ------ | ------------------- | ----------------------------------------------------- |
+| WC-01  | World Chat          | Communication, posts, broadcasts and forums           |
+| CC-02  | Call Card           | Identity references, permissions, macros and QR/NFC   |
+| SOS-03 | SOS Geocoord        | Geographic intelligence and emergency coordination    |
+| ME-04  | Micro-Economy       | Buy, Sell, Trade, auctions and bounties               |
+| CM-05  | Community Mesh      | Offline transport, relay and synchronization          |
+| XA-06  | Xenograph Analytics | Market analysis, discrepancy detection and prediction |
+| IL-07  | Integrity Ledger    | Event provenance, signatures and documentary audit    |
+
+### 2.2 System topology
+
+```text
+                  HUMANITARIAN PROJECT (+1HP)
+                              |
+                       WORLD CHAT CORE
+                              |
+          +-------------------+-------------------+
+          |                   |                   |
+      CALL CARDS          SOS GEOCOORD        COMMUNITY MESH
+          |                   |                   |
+      IDENTITY            GEO-TELEMETRY        P2P RELAY
+      PERMISSIONS         INSTITUTIONAL        OFFLINE CACHE
+      MACROS              DATA INGESTION       SYNCHRONIZATION
+          |                   |                   |
+          +-------------------+-------------------+
+                              |
+                       MICRO-ECONOMY
+                              |
+                +-------------+-------------+
+                |             |             |
+               BUY           SELL         TRADE
+                |             |             |
+                +-------------+-------------+
+                              |
+                     AUCTION / BOUNTY
+                              |
+                       OPTIONAL ESCROW
+                              |
+                    XENOGRAPH ANALYTICS
+                              |
+                  TRI-LAYER INTEGRITY LEDGER
+                              |
+                 AUDIT / VERIFICATION / EXPORT
+```
+
+### 2.3 Architectural independence
+
+The following boundaries are mandatory:
+
+* Messaging must work without blockchain connectivity.
+
+* Local mesh messaging must work without internet access when compatible peer hardware is available.
+
+* Analytics must operate asynchronously.
+
+* Ledger unavailability must not destroy locally stored messages.
+
+* Escrow must not execute without explicit transaction authorization.
+
+* Geolocation must be permission-controlled.
+
+* Identity and contact information must be logically separated.
+
+### 3\. Call Card infrastructure
+
+### 3.1 Object definition
+
+A Call Card is a digitally signed, revocable interaction object containing a pseudonymous participant reference, capabilities, macro definitions, and optional communication endpoints.
+
+It is not itself proof of legal identity, property ownership, or creditworthiness.
+
+### 3.2 Proposed object structure
+
+```json
+{
+  "card_id": "uuid",
+  "version": 1,
+  "subject_id": "pseudonymous_reference",
+  "public_key": "ed25519_public_key",
+  "display_name": "participant_alias",
+  "capabilities": [
+    "MESSAGE",
+    "BROADCAST",
+    "REQUEST",
+    "TRADE"
+  ],
+  "macro_registry": [],
+  "channel_policy": {
+    "personal_channel": true,
+    "public_discovery": false
+  },
+  "expiration": null,
+  "revocation_status": "ACTIVE",
+  "created_at": "ISO-8601",
+  "signature": "digital_signature"
+}
+```
+
+### 3.3 Required operations
+
+| Operation | Expected behavior                    |
+| --------- | ------------------------------------ |
+| Create    | Generate a new Call Card             |
+| Scan      | Resolve and validate card reference  |
+| Share     | Distribute an authorized card link   |
+| Delegate  | Grant limited capabilities           |
+| Revoke    | Invalidate permissions               |
+| Expire    | Disable time-limited credentials     |
+| Verify    | Check signature and status           |
+| Archive   | Preserve historical event references |
+
+### 3.4 QR and NFC behavior
+
+QR and NFC should support:
+
+* Public profile discovery.
+
+* One-time invitation.
+
+* Single-use authorization.
+
+* Transaction confirmation.
+
+* Delivery acknowledgment.
+
+* Restricted content access.
+
+* Revocable sharing.
+
+A QR code must not contain private signing keys or reusable authentication secrets.
+
+The `1T.Sig` mechanism should use a cryptographically random, single-use token associated with a server-side or locally verifiable authorization record.
+
+### 4\. World Chat messaging protocol
+
+### 4.1 Message categories
+
+| Type   | Identifier | Function                         |
+| ------ | ---------- | -------------------------------- |
+| Signal | SIG        | Announcement                     |
+| Sound  | SND        | Alarm or notice                  |
+| Siren  | SIR        | Emergency alert                  |
+| Buy    | WTB        | Request to purchase              |
+| Sell   | WTS        | Offer for sale                   |
+| Trade  | WTT        | Exchange proposal                |
+| Meme   | PIC        | Image/content exchange           |
+| Open   | GIF        | Continuing conceptual content    |
+| Peer   | PDF        | Document and contextual exchange |
+
+### 4.2 Message envelope
+
+Every message must use a common envelope.
+
+```json
+{
+  "message_id": "uuid",
+  "conversation_id": "uuid",
+  "sender_id": "pseudonymous_reference",
+  "message_type": "SIG",
+  "payload": {},
+  "created_at": "ISO-8601",
+  "expires_at": null,
+  "sequence_number": 1,
+  "previous_hash": null,
+  "signature": "digital_signature",
+  "delivery_state": "QUEUED"
+}
+```
+
+### 4.3 Delivery states
+
+```text
+CREATED
+   |
+VALIDATED
+   |
+SIGNED
+   |
+QUEUED
+   |
+TRANSMITTED
+   |
+DELIVERED
+   |
+ACKNOWLEDGED
+   |
+ARCHIVED
+```
+
+Additional terminal or exception states:
+
+* REJECTED
+
+* EXPIRED
+
+* REVOKED
+
+* QUARANTINED
+
+* DELIVERY_FAILED
+
+A transmitted message must not automatically be represented as delivered or acknowledged.
+
+### 4.4 Macro execution
+
+Macros are predefined actions with controlled parameters.
+
+Example:
+
+```text
+MACRO: WTB
+
+ACTION: PURCHASE REQUEST
+ITEM: Agricultural Produce
+QUANTITY: 25 Units
+LOCATION: Authorized Geofence
+PRICE: Negotiable
+DELIVERY: Local Pickup
+EXPIRATION: 24 Hours
+SIGNATURE: Required
+```
+
+Macro execution must include schema validation, permission verification, rate limiting, and user confirmation before consequential actions.
+
+### 5\. SOS Geocoord architecture
+
+### 5.1 Purpose
+
+SOS Geocoord initiates a geographic data collection event using a latitude/longitude coordinate pair or an authorized geographic region.
+
+It gathers relevant institutional, environmental, logistical, and community information to produce a localized situational-awareness report.
+
+### 5.2 Data strata
+
+| Stratum       | Data category                     | Proposed sources                     |
+| ------------- | --------------------------------- | ------------------------------------ |
+| Institutional | Employment, wages, turnover       | BLS, DOL                             |
+| Trade         | Imports, exports and dependencies | ITA and authorized trade datasets    |
+| Environmental | Chemical hazards and safety       | EPA, public emergency datasets       |
+| Logistics     | Freight, fuel and transportation  | Public transport and commercial APIs |
+| Energy        | Electricity, fuel and charging    | Energy providers and public datasets |
+| Community     | Offers, requests and inventory    | World Chat participants              |
+
+### 5.3 Ingestion pipeline
+
+```text
+COORDINATE EVENT
+       |
+VALIDATE GEOCOORD
+       |
+APPLY ACCESS PERMISSIONS
+       |
+DATA SOURCE DISCOVERY
+       |
+INGESTION
+       |
+NORMALIZATION
+       |
+TIMESTAMP + SOURCE ATTRIBUTION
+       |
+DISCREPANCY ANALYSIS
+       |
+LOCALIZED REPORT
+       |
+INTEGRITY LEDGER
+```
+
+### 5.4 Data reliability requirements
+
+Each external data observation must contain:
+
+* Source identifier.
+
+* Retrieval timestamp.
+
+* Geographic resolution.
+
+* Original measurement.
+
+* Unit of measurement.
+
+* Transformation history.
+
+* Freshness indicator.
+
+* Confidence or uncertainty.
+
+* Source licensing and access restrictions.
+
+Public datasets must not be described as real-time unless their actual update frequency supports that claim.
+
+Environmental hazard information must distinguish confirmed incidents, reported incidents, historical records, and model-generated estimates.
+
+### 6\. Community mesh and communication resilience
+
+### 6.1 Transport hierarchy
+
+| Priority   | Transport                  | Operational purpose                 |
+| ---------- | -------------------------- | ----------------------------------- |
+| Primary    | HTTPS / WebSocket          | Normal messaging                    |
+| Secondary  | WebRTC                     | Direct peer communication           |
+| Tertiary   | Local Wi-Fi / Wi-Fi Direct | Nearby device exchange              |
+| Quaternary | Bluetooth LE               | Discovery and small payloads        |
+| Fallback   | SMS                        | Compact emergency signaling         |
+| Optional   | Compatible RF hardware     | Specialized emergency communication |
+
+Engineering correction: WebRTC is a peer-communication protocol, not a complete offline mesh architecture. A separate discovery, routing, and store-and-forward layer is required.
+
+Legacy 56k dial-up should be treated as an experimental transport adapter rather than an assumed Android capability.
+
+### 6.2 Store-and-forward
+
+Each mesh node maintains:
+
+* Bounded encrypted message cache.
+
+* Message expiration.
+
+* Duplicate detection.
+
+* Sender authentication.
+
+* Relay permissions.
+
+* Delivery acknowledgment.
+
+* Synchronization history.
+
+### 6.3 Node swap mechanism
+
+```text
+ACTIVE NODE
+     |
+HEALTH MONITOR
+     |
++----+----------------+
+|                     |
+HEALTHY              DEGRADED
+|                     |
+CONTINUE             SELECT STANDBY
+                      |
+                 VALIDATE STATE
+                      |
+                 TRANSFER LEAD
+                      |
+                 NEW ACTIVE NODE
+```
+
+Node leadership is a temporary operational role, not an identity privilege.
+
+Selection must consider battery, connectivity, storage capacity, device availability, and synchronization state.
+
+### 7\. Micro-economic exchange architecture
+
+### 7.1 Exchange types
+
+| Type    | Function               | Required data                |
+| ------- | ---------------------- | ---------------------------- |
+| WTB     | Want to Buy            | Item, quantity, budget       |
+| WTS     | Want to Sell           | Item, price, condition       |
+| WTT     | Want to Trade          | Offered and requested assets |
+| Bounty  | Rewarded task          | Scope, reward, conditions    |
+| Auction | Competitive bidding    | Asset, reserve, bid window   |
+| Escrow  | Conditional settlement | Parties, terms, evidence     |
+
+### 7.2 Transaction lifecycle
+
+```text
+DRAFT
+  |
+PUBLISHED
+  |
+MATCHED
+  |
+NEGOTIATED
+  |
+AUTHORIZED
+  |
+FUNDED (OPTIONAL)
+  |
+FULFILLMENT
+  |
+DELIVERY EVIDENCE
+  |
+DISPUTE WINDOW
+  |
+SETTLEMENT
+  |
+CLOSED
+```
+
+Alternative states include CANCELLED, EXPIRED, DISPUTED, REFUNDED, and REVERSED.
+
+### 7.3 Escrow safeguards
+
+The escrow system must support:
+
+* Explicit buyer authorization.
+
+* Explicit seller acceptance.
+
+* Clearly defined transaction terms.
+
+* Asset and payment verification.
+
+* Delivery evidence.
+
+* Dispute submission.
+
+* Human review where necessary.
+
+* Refund and settlement procedures.
+
+An oracle provides external observations; it does not independently guarantee physical delivery or product quality.
+
+Escrow must remain disabled until smart-contract audits, supported wallet integrations, applicable legal review, and dispute procedures are complete.
+
+### 8\. Xenograph Analytics Engine
+
+### 8.1 Analytical responsibilities
+
+The engine evaluates relationships between communication, economic events, institutional datasets, and documentary evidence.
+
+Proposed analytical modules:
+
+| Module | Responsibility                    |
+| ------ | --------------------------------- |
+| XG-01  | Data ingestion and normalization  |
+| XG-02  | Graph relationship mapping        |
+| XG-03  | Anomaly and discrepancy detection |
+| XG-04  | Market sentiment analysis         |
+| XG-05  | Transaction performance           |
+| XG-06  | Source reliability                |
+| XG-07  | Geographic market comparisons     |
+| XG-08  | Integrity reporting               |
+
+### 8.2 Virtue/Sin discrepancy model
+
+The Virtue/Sin framework should be implemented as an explainable analytical model.
+
+Virtue indicators:
+
+* Verified transaction completion.
+
+* Accurate documentation.
+
+* Consistent fulfillment.
+
+* Valid cryptographic signatures.
+
+* Transparent corrections.
+
+* Reliable source attribution.
+
+Sin indicators:
+
+* Confirmed fraudulent activity.
+
+* Repeated documented defaults.
+
+* Proven message tampering.
+
+* Fabricated transaction evidence.
+
+* Unauthorized access.
+
+* Deliberate misrepresentation established through review.
+
+The model must distinguish an observation from an allegation and an allegation from an established finding.
+
+### 8.3 Proposed scoring dimensions
+
+| Dimension                 | Measurement                   |
+| ------------------------- | ----------------------------- |
+| Evidence Integrity        | Completeness and verification |
+| Transaction Reliability   | Fulfillment performance       |
+| Communication Reliability | Delivery and acknowledgment   |
+| Source Quality            | Provenance and freshness      |
+| Dispute Resolution        | Resolution outcomes           |
+| Operational Resilience    | Availability and recovery     |
+
+No single composite score should conceal the underlying measurements.
+
+Participants must be able to challenge inaccurate records and request correction.
+
+### 9\. Tri-Layer Integrity Ledger
+
+The ledger preserves documentary and operational evidence.
+
+### Proposed layers
+
+Layer 1 — Operational Records
+
+* Messages.
+
+* Call Card events.
+
+* Offers and requests.
+
+* Location permissions.
+
+* Transaction state changes.
+
+Layer 2 — Cryptographic Evidence
+
+* Hashes.
+
+* Digital signatures.
+
+* Event sequence references.
+
+* Merkle proofs.
+
+* Verification results.
+
+Layer 3 — Documentary Audit
+
+* Event provenance.
+
+* Administrative decisions.
+
+* Dispute outcomes.
+
+* Corrections.
+
+* Exportable audit reports.
+
+The ledger should preserve integrity without requiring every private message or sensitive location record to be publicly visible.
+
+Cryptographic hashing establishes consistency with recorded data; it does not independently establish that the original information was truthful.
+
+### 10\. VPN Map, GPS RTG, C-Radar and L-Strata
+
+| Module   | Implementation definition                                                          |
+| -------- | ---------------------------------------------------------------------------------- |
+| VPN Map  | Authorized virtualized network and geographic property inspection                  |
+| GPS RTG  | Permission-based movement and step statistics                                      |
+| C-Radar  | Market quality, equality comparisons and trend tracking                            |
+| L-Strata | Personalized analytics, linguistic processing, vocabulary and offline vessel cache |
+
+### 10.1 GPS RTG
+
+Movement measurements should distinguish:
+
+* Device-reported steps.
+
+* GPS-derived distance.
+
+* Accelerometer estimates.
+
+* Manually entered activity.
+
+* Estimated versus verified measurements.
+
+KL divergence can be used to measure distributional differences between observed and reference data.
+
+For probability distributions and :
+
+D_{KL}(P\\parallel Q)
+=
+\\sum_i P(i)\\log\\frac{P(i)}{Q(i)}
+
+It is not itself an estimator of squared residual error. Prediction error and residual analysis must be separately defined.
+
+### 10.2 C-Radar
+
+C-Radar evaluates market conditions using:
+
+* Price distributions.
+
+* Trading volume.
+
+* Offer frequency.
+
+* Supply and demand.
+
+* Bid/ask differences.
+
+* Fulfillment rates.
+
+* Market concentration.
+
+* Signal freshness.
+
+### 10.3 L-Strata
+
+L-Strata provides:
+
+* Personalized analytical data.
+
+* Linguistic yield.
+
+* Autonomous spelling and vocabulary assistance.
+
+* Offline caching.
+
+* Authorized community voting.
+
+* Aggregated census functionality.
+
+Individual census participation must be voluntary and appropriately anonymized.
+
+### 11\. Database and service architecture
+
+### 11.1 Proposed database entities
+
+| Entity        | Primary identifier | Purpose                                     |
+| ------------- | ------------------ | ------------------------------------------- |
+| Users         | user_id            | Participant account                         |
+| Identities    | identity_id        | Pseudonymous identity                       |
+| Call Cards    | card_id            | Interaction credential                      |
+| Channels      | channel_id         | Communication channel                       |
+| Messages      | message_id         | Message records                             |
+| Macros        | macro_id           | Standardized actions                        |
+| Geo Events    | geo_event_id       | SOS events                                  |
+| Locations     | location_id        | Permission-controlled geographic references |
+| Nodes         | node_id            | Community mesh devices                      |
+| Listings      | listing_id         | Buy/Sell/Trade posts                        |
+| Orders        | order_id           | Transaction records                         |
+| Auctions      | auction_id         | Auction lifecycle                           |
+| Escrows       | escrow_id          | Conditional settlement                      |
+| Bounties      | bounty_id          | Rewarded tasks                              |
+| Evidence      | evidence_id        | Documentary references                      |
+| Ledger Events | event_id           | Integrity records                           |
+| Analytics     | analytics_id       | Analytical outputs                          |
+| Disputes      | dispute_id         | Resolution records                          |
+
+### 11.2 Recommended technology baseline
+
+| Layer             | Proposed technology                               |
+| ----------------- | ------------------------------------------------- |
+| Web frontend      | TypeScript / React                                |
+| Android           | Kotlin                                            |
+| Backend API       | TypeScript / Node.js                              |
+| Primary database  | PostgreSQL                                        |
+| Offline database  | SQLite                                            |
+| Local messaging   | WebRTC + transport adapters                       |
+| Realtime delivery | WebSocket                                         |
+| Authentication    | Public-key credentials                            |
+| Cryptography      | Ed25519 / SHA-256                                 |
+| Object storage    | S3-compatible storage                             |
+| Analytics         | Python / graph processing                         |
+| Smart contracts   | EVM-compatible architecture, subject to selection |
+
+These are proposed technology selections, not existing deployed integrations.
+
+### 12\. API contract
+
+### 12.1 Core endpoint groups
+
+| Endpoint              | Method   | Function                     |
+| --------------------- | -------- | ---------------------------- |
+| /v1/identity          | POST     | Create pseudonymous identity |
+| /v1/cards             | POST     | Create Call Card             |
+| /v1/cards/{id}        | GET      | Retrieve authorized card     |
+| /v1/cards/{id}/revoke | POST     | Revoke card                  |
+| /v1/channels          | POST     | Create channel               |
+| /v1/messages          | POST     | Submit message               |
+| /v1/messages/sync     | POST     | Synchronize offline messages |
+| /v1/macros            | GET/POST | Retrieve or create macros    |
+| /v1/sos/events        | POST     | Initiate SOS event           |
+| /v1/sos/{id}/report   | GET      | Retrieve geographic report   |
+| /v1/market/listings   | GET/POST | Market listings              |
+| /v1/market/orders     | POST     | Create order                 |
+| /v1/market/auctions   | POST     | Create auction               |
+| /v1/bounties          | GET/POST | Bounty operations            |
+| /v1/analytics         | GET      | Retrieve analytical reports  |
+| /v1/ledger/events     | POST     | Record integrity event       |
+| /v1/ledger/verify     | POST     | Verify evidence              |
+
+### 12.2 API requirements
+
+Every endpoint must implement:
+
+* Authentication.
+
+* Authorization.
+
+* Input validation.
+
+* Rate limiting.
+
+* Request identifiers.
+
+* Structured error responses.
+
+* Audit logging where appropriate.
+
+* Version compatibility.
+
+Financial operations must support idempotency keys to prevent duplicate settlement.
+
+Example:
+
+```json
+{
+  "request_id": "uuid",
+  "idempotency_key": "unique-operation-key",
+  "actor_id": "pseudonymous-reference",
+  "operation": "CREATE_LISTING",
+  "payload": {
+    "listing_type": "WTS",
+    "item": "Agricultural Produce",
+    "quantity": 25,
+    "unit": "kg"
+  }
+}
+```
+
+### 13\. Security and privacy specification
+
+### 13.1 Security requirements
+
+| ID      | Requirement                                               |
+| ------- | --------------------------------------------------------- |
+| SEC-001 | Encrypt sensitive information in transit                  |
+| SEC-002 | Encrypt sensitive information at rest                     |
+| SEC-003 | Separate public identifiers from private identity data    |
+| SEC-004 | Require signed authorization for sensitive actions        |
+| SEC-005 | Support credential revocation                             |
+| SEC-006 | Apply role-based and capability-based access              |
+| SEC-007 | Protect against replay attacks                            |
+| SEC-008 | Implement secure offline synchronization                  |
+| SEC-009 | Maintain tamper-evident audit records                     |
+| SEC-010 | Provide backup and recovery                               |
+| SEC-011 | Apply data minimization and retention policies            |
+| SEC-012 | Provide participant data export and correction mechanisms |
+
+### 13.2 Threat model
+
+The implementation must account for:
+
+* Account takeover.
+
+* QR-code substitution.
+
+* Malicious mesh relays.
+
+* Replay attacks.
+
+* False emergency reports.
+
+* Location spoofing.
+
+* Marketplace fraud.
+
+* Sybil identities.
+
+* Credential theft.
+
+* Malicious macro execution.
+
+* Compromised third-party APIs.
+
+* Smart-contract vulnerabilities.
+
+### 13.3 Privacy boundary
+
+Precise geolocation, private messages, contact information, and financial records must not be exposed through public leaderboards.
+
+Participants must control location sharing and personal channel discovery.
+
+### 14\. Market Integrity Leaderboard
+
+### 14.1 Performance metrics
+
+The leaderboard should evaluate market performance independently from personal popularity.
+
+| Metric              | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| Highest Price Sold  | Highest verified completed sale                          |
+| Lowest Price Bought | Lowest verified purchase                                 |
+| Trade-to-Sell Ratio | Completed sales relative to sell offers                  |
+| Trade-to-Buy Ratio  | Completed purchases relative to buy requests             |
+| Quickest Return     | Shortest verified transaction duration                   |
+| Longest Return      | Longest completed transaction duration                   |
+| Best Offer          | Best qualifying offer under defined criteria             |
+| Volume Uniqueness   | Distinct transaction participation                       |
+| Market Sentiment    | Aggregated directional activity                          |
+| Fulfillment Rate    | Completed transactions relative to accepted transactions |
+
+### 14.2 Anti-manipulation controls
+
+The system must detect or flag:
+
+* Wash trading.
+
+* Duplicate listings.
+
+* Artificial volume.
+
+* Coordinated false offers.
+
+* Circular transactions.
+
+* Repeated self-dealing.
+
+* Manipulated price signals.
+
+Leaderboard rewards must not be based solely on transaction volume.
+
+### 14.3 Auto Team Returns
+
+Auto Team Returns groups participants according to compatible trade preferences, geographic proximity, fulfillment history, and available inventory.
+
+The matching system must disclose its ranking factors and avoid using sensitive attributes as hidden eligibility criteria.
+
+### 15\. Decentralized Dock & Hook
+
+Three extension systems are proposed.
+
+15.1 Forum
+
+Community discussion, knowledge exchange, localized educational assistance, and structured conceptual information posts.
+
+15.2 Oracle Table
+
+A future data verification and external information interface.
+
+Its purpose is to provide trusted, attributable external observations to the analytics and transaction systems.
+
+15.3 Exchange Chat
+
+A dedicated communication channel attached to listings, offers, auctions, and transaction records.
+
+It supports:
+
+* Negotiation.
+
+* Delivery coordination.
+
+* Transaction evidence.
+
+* Dispute communication.
+
+* Participant acknowledgment.
+
+* MVP/VIP recognition based on transparent participation criteria.
+
+These components should use shared messaging and authorization services rather than independent identity systems.
+
+### 16\. Event lifecycle and synchronization
+
+All major system activities should generate structured events.
+
+Examples:
+
+```text
+IDENTITY_CREATED
+CALL_CARD_ISSUED
+CALL_CARD_REVOKED
+MESSAGE_CREATED
+MESSAGE_DELIVERED
+SOS_TRIGGERED
+GEO_REPORT_GENERATED
+LISTING_CREATED
+OFFER_ACCEPTED
+TRADE_COMPLETED
+ESCROW_FUNDED
+DELIVERY_CONFIRMED
+DISPUTE_OPENED
+DISPUTE_RESOLVED
+LEDGER_VERIFIED
+```
+
+### 16.1 Event integrity
+
+Each event should contain:
+
+* Unique event identifier.
+
+* Event type.
+
+* Actor reference.
+
+* Object reference.
+
+* Event timestamp.
+
+* Source device or service.
+
+* Sequence number.
+
+* Previous event hash where applicable.
+
+* Signature.
+
+* Verification status.
+
+### 16.2 Conflict resolution
+
+Offline synchronization must distinguish:
+
+* Duplicate events.
+
+* Out-of-order events.
+
+* Concurrent modifications.
+
+* Revoked permissions.
+
+* Expired actions.
+
+* Conflicting transaction states.
+
+Financial state changes must use authoritative transaction rules rather than ordinary last-write-wins synchronization.
+
+### 17\. Implementation roadmap
+
+| Phase | Engineering milestone    | Release condition                     |
+| ----- | ------------------------ | ------------------------------------- |
+| P0    | Protocol foundation      | Shared schemas and identity tests     |
+| P1    | Mesh prototype           | Offline exchange demonstrated         |
+| P2    | Call Card implementation | Creation, scanning and revocation     |
+| P3    | SOS Geocoord             | Validated data ingestion              |
+| P4    | Micro-Economy            | Buy/Sell/Trade lifecycle              |
+| P5    | Xenograph Analytics      | Reproducible analytical outputs       |
+| P6    | Tri-Layer Ledger         | Cryptographic verification            |
+| P7    | Escrow and auctions      | Independent security and legal review |
+| P8    | Dock & Hook              | Forums, oracle and exchange chat      |
+
+### Proposed development allocation
+
+| Workstream                          | Allocation |
+| ----------------------------------- | ---------- |
+| Protocol and application foundation | 20%        |
+| Mesh and communication resilience   | 20%        |
+| Call Cards and identity             | 15%        |
+| SOS and data integration            | 15%        |
+| Xenograph and ledger                | 15%        |
+| Exchange and escrow                 | 10%        |
+| Security and independent testing    | 5%         |
+| Total                               | 100%       |
+
+This is a proposed allocation of engineering effort, not a validated cost estimate.
+
+### 18\. Acceptance testing
+
+The following tests are release requirements.
+
+| Test ID | Acceptance criterion                                       |
+| ------- | ---------------------------------------------------------- |
+| AT-001  | A pseudonymous identity can be created                     |
+| AT-002  | A Call Card can be issued                                  |
+| AT-003  | A revoked Call Card fails authorization                    |
+| AT-004  | A QR code resolves to the correct authorized object        |
+| AT-005  | Single-use authorization cannot be replayed                |
+| AT-006  | Messages can be created and digitally signed               |
+| AT-007  | Messages synchronize between web and Android               |
+| AT-008  | Offline messages are retained until synchronization        |
+| AT-009  | Duplicate messages are detected                            |
+| AT-010  | Unauthorized users cannot access personal channels         |
+| AT-011  | SOS events validate geographic inputs                      |
+| AT-012  | External data sources retain provenance                    |
+| AT-013  | Stale data is visibly identified                           |
+| AT-014  | Community nodes can exchange messages locally              |
+| AT-015  | A standby node can assume relay duties                     |
+| AT-016  | Mesh synchronization detects conflicting records           |
+| AT-017  | Buy/Sell/Trade listings validate required fields           |
+| AT-018  | Orders follow the defined transaction lifecycle            |
+| AT-019  | Auctions enforce their configured closing rules            |
+| AT-020  | Escrow remains disabled until release authorization        |
+| AT-021  | Analytical outputs are reproducible                        |
+| AT-022  | Integrity indicators expose their contributing evidence    |
+| AT-023  | Participants can challenge inaccurate records              |
+| AT-024  | Ledger hashes and signatures can be independently verified |
+| AT-025  | Audit exports preserve event sequence and provenance       |
+
+### Release gate
+
+A phase cannot be marked complete merely because its interface exists.
+
+It must demonstrate:
+
+* Functional behavior.
+
+* Validated data contracts.
+
+* Security controls.
+
+* Failure handling.
+
+* Documented test results.
+
+* Reproducible acceptance evidence.
+
+### 19\. Open engineering decisions
+
+The following questions remain unresolved and must be settled before production implementation.
+
+| Decision     | Required determination                                    |
+| ------------ | --------------------------------------------------------- |
+| Blockchain   | Select network and execution environment                  |
+| Wallets      | Custodial versus non-custodial                            |
+| Mesh         | Select supported Android transport technologies           |
+| Identity     | Establish recovery and key rotation                       |
+| Storage      | Define retention and deletion policies                    |
+| SOS          | Establish authorized data providers                       |
+| Location     | Define geographic precision and consent                   |
+| Escrow       | Establish dispute and arbitration procedures              |
+| Scoring      | Approve transparent integrity methodology                 |
+| Governance   | Define node administration and appeals                    |
+| Tokenization | Determine whether a token is necessary at all             |
+| Payments     | Select compliant payment providers and settlement methods |
+
+A token should not be introduced merely to reward activity. The system must first demonstrate that tokenization provides a necessary technical or economic benefit.
+
+### 20\. Final engineering declaration
+
+World Chat is intended to function as the human communication and coordination interface of Humanitarian_Project (+1HP).
+
+Its implementation combines decentralized communication, pseudonymous identity, localized economic exchange, emergency geographic intelligence, analytical processing, and cryptographic documentary integrity.
+
+The architecture prioritizes operational continuity, transparent evidence, user-controlled participation, and accountable economic activity.
+
+Governing principle:
+
+> Communication establishes connection. Evidence establishes credibility. Integrity establishes continuity.
+
+Humanitarian_Project (+1HP) Epistemic Articulacy · Modernization Integrity Law Is To Be Made Clear.
+
+Document status: Proposed engineering specification. Production readiness requires implementation, independent testing, security assessment, and formal acceptance.
+
+### 21\. Recommended implementation milestone
+
+P0 — Protocol Foundation is the recommended starting point.
+
+The first working prototype should demonstrate five things:
+
+* Pseudonymous participant creation.
+
+* Call Card generation, scanning, and revocation.
+
+* Signed World Chat messages.
+
+* Shared Web/Android message schemas.
+
+* Offline peer-to-peer message exchange.
+
+Only after these pass should the project introduce economic settlement and blockchain dependencies.
+
+Engineering recommendation: Establish World Chat as the foundation protocol, with SOS Geocoord, Xenograph Analytics, and the Tri-Layer Integrity Ledger operating as interoperable modules rather than tightly coupled applications.
