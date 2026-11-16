@@ -1,0 +1,1151 @@
+HUMANITARIAN_PROJECT (+1HP)
+
+MASTER TECHNICAL ARCHITECTURE v1.0
+
+Unified Investor White Paper · Engineering Specification · Governance Codex
+
+Principal / Recteur: Jonathan Edward Bower
+Project: Humanitarian_Project (+1HP)
+Architecture: Ground Zero™ · Xenograph Analytics · Rational Anti-Concentration Integrity
+Core Integrity Model: Tri-Layer Integrity Ledger
+Associated Specifications: WS-WC-001 · SOS-GEO-INSPECT-01
+Development Status: Proposed Unified Architecture
+Document Date: 16 November 2026
+Version: 1.0 — Architectural Baseline
+
+---
+
+1. Executive Mandate
+
+Humanitarian_Project (+1HP) proposes a modular digital infrastructure ecosystem integrating communication, digital commerce, cryptographic verification, interactive assets, financial coordination, and accountable governance.
+
+The Master Technical Architecture establishes a common development framework for the following systems:
+
+1. Xenograph Analytics Engine
+2. World Chat Communication Network
+3. Card Conduit Engine
+4. EZnvoice & Payment Orchestration
+5. Escrow Oracle Chain
+6. Auction & Marketplace Engine
+7. Tri-Layer Integrity Ledger
+8. Ground Zero™ Virtualization Architecture
+9. SOS-GEO-INSPECT-01
+10. Identity, Authorization & Cryptographic Services
+
+The purpose of this document is to establish how these components interact, where their responsibilities begin and end, how information moves between them, and how their integrity can be independently evaluated.
+
+This is a proposed architecture, not evidence of a production deployment, completed audit, established partnership, or validated financial product.
+
+1.1 Mission
+
+Advance modernization through transparency, accountability, evidence-based governance, and accessible technological infrastructure.
+
+1.2 Architectural objectives
+
+- Reduce unnecessary infrastructure concentration.
+- Establish verifiable transaction histories.
+- Provide accessible communication and coordination.
+- Separate financial authorization from application logic.
+- Support decentralized and intermittently connected communication.
+- Establish cryptographic evidence preservation.
+- Enable modular service replacement.
+- Support independent security and governance reviews.
+- Develop measurable public-interest applications.
+
+1.3 Governing principles
+
+Evidence over assertion.
+
+Substance over form.
+
+Separation of authority.
+
+Verifiable execution.
+
+Privacy by design.
+
+Recoverability over assumed availability.
+
+Independent verification over institutional self-certification.
+
+---
+
+2. Unified System Architecture
+
+The platform is organized into six architectural layers.
+
+Layer| Architecture| Responsibility
+L1| Experience| User interfaces and interactions
+L2| Application| Business logic and orchestration
+L3| Communication| Messaging, mesh transport and notifications
+L4| Execution| Payments, assets, escrow and auctions
+L5| Integrity| Cryptographic records and evidence verification
+L6| Governance| Authorization, oversight, policy and accountability
+
+2.1 Unified architecture diagram
+
+             HUMANITARIAN_PROJECT (+1HP)
+                       |
+                GROUND ZERO™
+                       |
+              EXPERIENCE LAYER
+                       |
+        +--------------+--------------+
+        |              |              |
+    WORLD CHAT     CARD CONDUIT    MARKETPLACE
+        |              |              |
+        +--------------+--------------+
+                       |
+             APPLICATION LAYER
+                       |
+        +--------------+--------------+
+        |              |              |
+    XENOGRAPH       EZnvoice       IDENTITY
+    ANALYTICS       WORKFLOW       SERVICES
+        |              |              |
+        +--------------+--------------+
+                       |
+             EXECUTION LAYER
+                       |
+        +--------------+--------------+
+        |              |              |
+     PAYMENTS        ESCROW         AUCTIONS
+        |              |              |
+        +--------------+--------------+
+                       |
+             INTEGRITY LAYER
+                       |
+        +--------------+--------------+
+        |              |              |
+     EVENT LOG     CRYPTO HASH     EVIDENCE
+        |              |              |
+        +--------------+--------------+
+                       |
+             GOVERNANCE LAYER
+                       |
+        ACCESS CONTROL · OVERSIGHT
+        DISPUTES · AUDIT · RECOVERY
+
+This diagram describes logical dependencies, not a requirement to deploy every component as a separate server or blockchain.
+
+2.2 Architectural separation
+
+World Chat must remain operational independently of the financial execution layer.
+
+Card Conduit must not independently authorize payments.
+
+Xenograph Analytics may analyze transaction events but must not possess unrestricted authority to change balances, release funds, or determine ownership.
+
+The Integrity Ledger records and verifies evidence but does not independently establish the truth of external claims.
+
+Governance services define who can perform privileged actions and how those actions are reviewed.
+
+---
+
+3. Ground Zero™ — Shared Infrastructure
+
+Ground Zero™ is the proposed foundational virtualization and integration environment.
+
+Its responsibility is to provide common infrastructure without forcing every application into a single execution model.
+
+3.1 Core services
+
+- Service discovery and registration.
+- API gateway.
+- Authentication and authorization.
+- Event distribution.
+- Configuration management.
+- Version control.
+- Observability and monitoring.
+- Data validation.
+- Cryptographic signing.
+- Backup and recovery.
+- Development and testing environments.
+
+3.2 Service architecture
+
+Each subsystem should expose documented interfaces.
+
+Recommended service boundaries:
+
+Service| Interface responsibility
+Identity API| Accounts, pseudonyms, credentials
+Communication API| Messages and channel metadata
+Card API| Inventory, rules and game state
+Invoice API| Invoice creation and status
+Payment API| Payment intents and provider status
+Escrow API| Deposits, conditions and release
+Auction API| Listings, bids and outcomes
+Integrity API| Hashes, signatures and evidence
+Analytics API| Aggregated operational measurements
+
+Each service must have an identifiable owner, version, authorization policy, and failure-handling procedure.
+
+3.3 Rational Anti-Concentration Integrity
+
+The architecture should support:
+
+- Replaceable infrastructure providers.
+- Multiple authorized administrators where appropriate.
+- Independent audit capabilities.
+- Documented emergency privileges.
+- Portable records and export procedures.
+- Open interface specifications.
+- Recovery without exclusive dependence on one operator.
+
+Decentralization should be introduced where it provides a demonstrable advantage, not merely as an architectural label.
+
+---
+
+4. Xenograph Analytics Engine
+
+Primary role: Cross-system analytical coordination.
+
+Xenograph Analytics provides a common analytical framework for understanding events, relationships, operational performance, and integrity discrepancies.
+
+4.1 Proposed analytical modules
+
+Module| Responsibility
+Event Ingestion| Receive normalized system events
+Graph Translation| Convert relationships into graph structures
+Schema Alignment| Map non-identical data structures
+Anomaly Detection| Identify unusual event patterns
+Integrity Evaluation| Compare recorded and verified evidence
+Performance Analytics| Evaluate system-level KPIs
+Reporting Engine| Produce traceable analytical reports
+Evidence Index| Reference supporting records
+
+4.2 Analytical evidence classifications
+
+Every analytical result should distinguish:
+
+1. Directly recorded event.
+2. Cryptographically verified event.
+3. Externally supplied assertion.
+4. Derived analytical conclusion.
+5. Unresolved discrepancy.
+6. Human-reviewed determination.
+
+A hash proves that data matches a particular digest under the assumptions of the hashing algorithm. It does not independently prove that the underlying information was true when recorded.
+
+4.3 Data ingestion
+
+Proposed sources include:
+
+- World Chat events.
+- Card Conduit state changes.
+- Invoice and payment records.
+- Auction records.
+- Escrow state transitions.
+- Device telemetry with appropriate consent.
+- Approved external datasets.
+
+All ingestion must include source identification, timestamps, schema version, and provenance.
+
+4.4 Acceptance criteria
+
+- Reproducible analytical outputs.
+- Documented transformations.
+- Traceable source references.
+- Explicit confidence and uncertainty.
+- Rejection or quarantine of malformed inputs.
+- Independent verification of material conclusions.
+
+---
+
+5. World Chat Communication Network
+
+Associated specification: WS-WC-001-IMP-01.
+
+World Chat provides the communication and coordination layer.
+
+5.1 Core modules
+
+Module| Function
+Personal Channel| Individual communication space
+Call Cards| Contact and communication identifiers
+Autolink| Controlled connection discovery
+Signal| Standard notification
+Sound| Higher-priority notification
+Siren| Emergency notification
+Mesh Transport| Local peer-to-peer communication
+Store-and-Forward| Bounded offline message delivery
+Channel Registry| Channel metadata and membership
+Identity Service| Pseudonymous participant management
+
+5.2 Communication architecture
+
+The proposed architecture supports three operating conditions:
+
+Connected mode: Internet-based communication and synchronization.
+
+Local mesh mode: Direct communication between compatible nearby devices using supported transport technologies.
+
+Intermittent mode: Local message preservation and later synchronization.
+
+A browser application cannot assume access to unrestricted device-to-device radio capabilities. Android and web implementations will require separate transport adapters and capability testing.
+
+5.3 Identity model
+
+Pseudonymous identities should use cryptographic credentials rather than treating display names as authentication.
+
+Recommended identity fields:
+
+- Internal participant ID.
+- Public pseudonymous identifier.
+- Public verification key.
+- Credential status.
+- Revocation status.
+- Optional contact information.
+- Device registration references.
+
+Private keys must not be stored in plaintext server databases.
+
+5.4 Call Cards
+
+Call Cards provide an alternative communication identifier that does not require publishing a conventional telephone number.
+
+Potential capabilities:
+
+- Public contact discovery.
+- Private connection requests.
+- Credential verification.
+- Revocation.
+- Optional service routing.
+- User-controlled visibility.
+
+A Call Card identifier is not proof of a person's legal identity.
+
+5.5 SOS-GEO-INSPECT-01
+
+The SOS subsystem coordinates emergency signaling and optional location evidence.
+
+Proposed capabilities:
+
+- User-initiated SOS activation.
+- Permission-controlled geolocation.
+- Timestamped location observations.
+- Emergency contact routing.
+- Delivery confirmation.
+- Location expiration.
+- Audit records.
+
+Location must be collected only under an explicit and documented permission model, with restricted access and retention.
+
+The VPN Map must not become an unrestricted individual surveillance system. Network diagnostics, server location, and user location are distinct data categories.
+
+5.6 World Chat acceptance criteria
+
+- Cross-platform message compatibility.
+- Cryptographically authenticated messages.
+- Message replay protection.
+- Device and credential revocation.
+- Offline queue recovery.
+- Duplicate message handling.
+- Defined delivery states.
+- Permission-controlled location access.
+- Documented metadata exposure.
+- Independently reproducible protocol tests.
+
+---
+
+6. Card Conduit Engine
+
+Primary role: Interactive asset management and rules-driven game execution.
+
+6.1 Functional modules
+
+- Card Registry.
+- Rule Engine.
+- Energy Relay.
+- Color Combo Connection.
+- Surge Mechanics.
+- Blowout Strategy Engine.
+- Inventory Service.
+- Event Recorder.
+
+6.2 Deterministic state model
+
+Let:
+
+S(t) = Current game state
+
+A(t) = Authorized player action
+
+R(v) = Versioned game rules
+
+V = Protocol version
+
+Then:
+
+S(t+1) = F(S(t), A(t), R(v), V)
+
+Where F is the defined state-transition function.
+
+For deterministic gameplay, identical valid inputs and versions must produce identical results.
+
+If random outcomes are introduced, the randomization mechanism must have separately defined fairness and verification properties.
+
+6.3 Asset ownership
+
+The implementation must distinguish:
+
+- Application-level ownership records.
+- On-chain token ownership.
+- Intellectual-property rights.
+- Game participation rights.
+- Transfer and redemption rights.
+
+These are not interchangeable.
+
+6.4 Acceptance criteria
+
+- Invalid moves cannot modify authoritative state.
+- Duplicate actions cannot consume resources twice.
+- Inventory reconciles after transfers.
+- Game outcomes are reproducible.
+- Rules are versioned.
+- Administrative overrides are auditable.
+
+---
+
+7. EZnvoice & Payment Orchestration
+
+Primary role: Financial transaction coordination.
+
+EZnvoice provides a common workflow for invoices, payment requests, transaction status, and receipts.
+
+7.1 Invoice structure
+
+Each invoice should include:
+
+- Unique invoice ID.
+- Issuer reference.
+- Recipient reference.
+- Item or service description.
+- Amount.
+- Currency.
+- Issue date.
+- Expiration date.
+- Payment conditions.
+- Payment status.
+- Supporting evidence references.
+
+7.2 Payment state machine
+
+CREATED
+   |
+PENDING_AUTHORIZATION
+   |
+AUTHORIZED
+   |
+PROCESSING
+   |
+CONFIRMED
+   |
+RECONCILED
+
+Alternative states:
+
+- FAILED
+- EXPIRED
+- CANCELLED
+- REVERSED
+- REFUNDED
+- DISPUTED
+
+The exact transitions depend on the payment provider and payment rail.
+
+7.3 Payment adapter
+
+The payment adapter should provide:
+
+- Payment intent creation.
+- Authorization.
+- Execution.
+- Status retrieval.
+- Refund processing.
+- Webhook verification.
+- Reconciliation.
+- Fee reporting.
+
+Payment provider notifications must be authenticated and processed idempotently.
+
+7.4 Financial security
+
+- No unrestricted storage of raw payment-card credentials.
+- Protected API credentials.
+- Signing-key protection.
+- Idempotency controls.
+- Replay protection.
+- Amount and currency validation.
+- Transaction limits.
+- Reconciliation procedures.
+- Incident response.
+
+An authorization is not equivalent to settlement. A blockchain confirmation is not equivalent to a bank settlement.
+
+---
+
+8. Escrow Oracle Chain
+
+Primary role: Conditional transaction execution.
+
+Escrow coordinates the fulfillment of contractual conditions before funds or assets are released.
+
+8.1 Escrow lifecycle
+
+INVOICE_CREATED
+       |
+TERMS_ACCEPTED
+       |
+FUNDS_DEPOSITED
+       |
+CONDITIONS_PENDING
+       |
+   +---+---+
+   |       |
+VERIFIED  DISPUTED
+   |       |
+RELEASE   REVIEW
+   |       |
+SETTLED  RESOLUTION
+
+Additional states should support cancellation, refund, expiration, and failed settlement.
+
+8.2 Custody distinction
+
+The system must explicitly identify whether funds are:
+
+- Merely recorded in an internal ledger.
+- Authorized by a payment provider.
+- Reserved by a payment provider.
+- Deposited into a smart contract.
+- Held by a regulated third-party custodian.
+
+An internal database entry is not escrow custody.
+
+8.3 Oracle requirements
+
+Each oracle source must define:
+
+- Source identity.
+- Evidence format.
+- Verification procedure.
+- Freshness requirement.
+- Failure behavior.
+- Conflicting evidence handling.
+- Authorized reviewers.
+- Emergency suspension rules.
+
+Oracle unavailability must never automatically count as proof of fulfillment.
+
+8.4 Smart-contract requirements
+
+- Independent contract review.
+- Access-control verification.
+- Reentrancy protection where applicable.
+- Replay protection.
+- Defined upgrade policy.
+- Emergency pause policy.
+- Documented dispute handling.
+- Tested recovery and refund paths.
+
+---
+
+9. Auction & Marketplace Engine
+
+Primary role: Accountable commercial exchange.
+
+The auction engine operates independently from game resolution and payment execution.
+
+9.1 Auction lifecycle
+
+CREATE → PUBLISH → BID → CLOSE → AWARD → SETTLE
+
+9.2 Initial auction implementation
+
+The recommended first release supports one clearly specified auction format.
+
+The format must define:
+
+- Starting price.
+- Minimum increment.
+- Reserve price, if applicable.
+- Opening and closing times.
+- Bidder eligibility.
+- Simultaneous bid ordering.
+- Tie-breaking.
+- Cancellation.
+- Failed-payment handling.
+- Seller fees.
+- Platform fees.
+- Asset delivery.
+- Dispute procedures.
+
+9.3 Integrity controls
+
+- Server-authoritative bid validation.
+- Consistent time handling.
+- Idempotent bid submission.
+- Ordered bid records.
+- Authorization checks.
+- Asset reservation.
+- Payment obligation creation.
+- Reconciliation.
+
+Private bidder information must not be published unnecessarily.
+
+---
+
+10. Tri-Layer Integrity Ledger
+
+Primary role: Documentary integrity and verifiable system history.
+
+The Tri-Layer Integrity Ledger establishes a common evidence architecture.
+
+The following decomposition is the proposed implementation baseline.
+
+10.1 Layer A — Operational Record
+
+Stores authoritative application events and transaction state.
+
+Examples:
+
+- Account creation.
+- Message metadata.
+- Card transfers.
+- Invoice creation.
+- Payment status.
+- Auction bids.
+- Escrow transitions.
+
+10.2 Layer B — Cryptographic Integrity
+
+Provides:
+
+- Cryptographic hashes.
+- Digital signatures.
+- Event sequence references.
+- Merkle-tree commitments where appropriate.
+- Timestamp evidence.
+- Record versioning.
+- Integrity verification.
+
+10.3 Layer C — Independent Evidence
+
+Provides:
+
+- Audit reports.
+- External verification.
+- Dispute documentation.
+- Human review records.
+- Reconciliation results.
+- Governance decisions.
+- Evidence preservation.
+
+10.4 Event record structure
+
+Each material event should include:
+
+Field| Purpose
+event_id| Unique event identifier
+event_type| Defined event category
+entity_id| Associated object
+actor_id| Authorized actor reference
+timestamp| Recorded event time
+sequence| Ordering reference
+schema_version| Data contract version
+previous_hash| Prior event commitment
+payload_hash| Event payload commitment
+signature| Authorized cryptographic signature
+evidence_ref| Supporting evidence reference
+
+10.5 Cryptographic allocation hashing
+
+Allocation records should identify:
+
+- Source amount or resource.
+- Allocation recipient.
+- Allocation rule.
+- Allocation version.
+- Authorization reference.
+- Transaction reference.
+- Resulting balance.
+- Verification hash.
+
+A hash chain provides tamper evidence, not absolute immutability. Protection against alteration also requires access controls, independent checkpoints, backups, and verification.
+
+---
+
+11. Shared Identity & Authorization
+
+All platform services should use consistent identity and authorization principles.
+
+11.1 Identity categories
+
+- Anonymous visitor.
+- Registered pseudonymous participant.
+- Verified credential holder.
+- Service account.
+- Administrator.
+- Independent auditor.
+- Governance authority.
+
+Verification must be scoped to the claim being established.
+
+A verified cryptographic key does not automatically establish a verified legal identity.
+
+11.2 Authorization model
+
+Recommended approach:
+
+Role-Based Access Control combined with resource-specific authorization.
+
+Example:
+
+Role| Permission
+Participant| Own account and permitted interactions
+Seller| Manage authorized listings
+Buyer| Submit eligible bids
+Auditor| Read approved audit evidence
+Operator| Manage designated services
+Administrator| Perform explicitly authorized administrative functions
+
+Privileged actions should require additional authentication, logging, and review.
+
+---
+
+12. Shared Data & Event Contracts
+
+All modules must share common event conventions.
+
+12.1 Event envelope
+
+{
+  "event_id": "unique-event-id",
+  "event_type": "payment.confirmed",
+  "entity_id": "transaction-reference",
+  "actor_id": "pseudonymous-actor-id",
+  "timestamp": "ISO-8601-UTC",
+  "schema_version": "1.0",
+  "sequence": 1,
+  "correlation_id": "workflow-reference",
+  "payload_hash": "sha256-digest",
+  "signature": "signature-reference"
+}
+
+This is an illustrative interface contract. Production schemas must define validation, canonical serialization, key formats, and error handling.
+
+12.2 Shared identifiers
+
+The platform should establish stable identifiers for:
+
+- Users.
+- Devices.
+- Channels.
+- Cards.
+- Assets.
+- Invoices.
+- Payments.
+- Escrow agreements.
+- Auctions.
+- Bids.
+- Evidence records.
+- Governance actions.
+
+12.3 Data governance
+
+- Minimize personal information.
+- Encrypt sensitive data.
+- Avoid placing confidential information directly on public blockchains.
+- Define retention and deletion policies.
+- Preserve necessary financial and audit records under applicable requirements.
+- Version schemas.
+- Document corrections rather than silently rewriting historical events.
+
+---
+
+13. Security Architecture & Threat Model
+
+Security must be evaluated across the entire platform, not only the blockchain components.
+
+13.1 Threat categories
+
+Threat| Primary control
+Account compromise| Strong authentication and recovery
+Key theft| Protected key storage and rotation
+Message interception| Authenticated encryption
+Replay attacks| Nonces and idempotency
+Fraudulent bids| Server-authoritative validation
+Payment duplication| Idempotency and reconciliation
+Oracle manipulation| Source verification and dispute handling
+Contract vulnerabilities| Independent security audits
+Insider abuse| Least privilege and audit trails
+Data leakage| Encryption and minimization
+Network outage| Store-and-forward and recovery
+Service concentration| Replaceable interfaces and portability
+
+13.2 Security release gates
+
+No production financial execution should be enabled before:
+
+1. Threat modeling.
+2. Authentication testing.
+3. Authorization testing.
+4. API security testing.
+5. Cryptographic implementation review.
+6. Data protection assessment.
+7. Incident response exercises.
+8. Independent contract audit where applicable.
+9. Remediation verification.
+10. Release authorization.
+
+---
+
+14. Development Architecture & Technology Selection
+
+Technology selection should follow demonstrated requirements rather than predetermined vendor commitments.
+
+14.1 Recommended implementation categories
+
+Function| Candidate technology category
+Web application| Modern TypeScript framework
+Android| Native Android or compatible cross-platform framework
+Backend| Modular API services
+Operational database| Relational database
+Event distribution| Message broker or durable event queue
+Search and analytics| Search index and analytical storage
+Cryptography| Established cryptographic libraries
+Mesh communication| Platform-specific peer transport
+Blockchain| One initially selected execution network
+Smart contracts| Auditable contract framework
+Infrastructure| Containerized deployment
+Monitoring| Metrics, logs and distributed tracing
+
+These are technology categories, not confirmed selections or integrations.
+
+14.2 Recommended initial topology
+
+Start with:
+
+- One operational database.
+- One event-processing environment.
+- One identity service.
+- One communication prototype.
+- One blockchain test environment.
+- One payment-provider sandbox.
+
+Expand only when demonstrated requirements justify additional infrastructure.
+
+---
+
+15. Implementation Roadmap
+
+Development should proceed through controlled milestones.
+
+P0 — Protocol Foundation
+
+Objective: Establish shared technical contracts.
+
+Deliverables:
+
+- Master data model.
+- Identity specification.
+- Authorization model.
+- Event envelope.
+- API definitions.
+- Cryptographic standards.
+- Threat model.
+- Repository structure.
+- Development environments.
+
+Exit criteria: Cross-system interfaces pass schema and authorization tests.
+
+P1 — World Chat & Mesh Prototype
+
+Objective: Demonstrate communication independently of financial execution.
+
+Deliverables:
+
+- Pseudonymous identity.
+- Call Cards.
+- Personal Channel.
+- Message schemas.
+- Local peer exchange.
+- Store-and-forward.
+- Revocation.
+- Basic synchronization.
+
+Exit criteria: Web and Android clients exchange compatible authenticated messages, including tested offline scenarios.
+
+P2 — Integrity Ledger & Xenograph
+
+Objective: Establish verifiable event records.
+
+Deliverables:
+
+- Event ingestion.
+- Hash generation.
+- Digital signatures.
+- Event sequencing.
+- Evidence references.
+- Reconciliation.
+- Analytical reports.
+
+Exit criteria: Independent verification reproduces selected event-integrity results.
+
+P3 — Card Conduit
+
+Objective: Implement deterministic interactive mechanics.
+
+Deliverables:
+
+- Card registry.
+- Inventory.
+- Rule engine.
+- Energy relay.
+- Color combinations.
+- Surge mechanics.
+- Game-state recording.
+
+Exit criteria: Rule-based gameplay and inventory transitions pass reproducibility and integrity tests.
+
+P4 — EZnvoice & Payments
+
+Objective: Demonstrate controlled payment orchestration.
+
+Deliverables:
+
+- Invoice service.
+- Payment adapter.
+- Sandbox transactions.
+- Webhook verification.
+- Idempotency.
+- Refund handling.
+- Reconciliation.
+
+Exit criteria: Repeated requests, failures, reversals, and reconciliation scenarios pass testing.
+
+P5 — Escrow & Auction
+
+Objective: Introduce conditional asset exchange.
+
+Deliverables:
+
+- Escrow state machine.
+- Smart-contract test deployment.
+- Oracle interfaces.
+- Dispute workflow.
+- Auction listing.
+- Bid validation.
+- Settlement coordination.
+
+Exit criteria: Independent security review, tested dispute paths, and successful transaction reconciliation.
+
+P6 — Controlled Pilot
+
+Objective: Evaluate the integrated platform.
+
+Deliverables:
+
+- Limited participant onboarding.
+- Operational monitoring.
+- Security assessment.
+- User accessibility evaluation.
+- Performance testing.
+- Governance review.
+- Pilot reporting.
+
+Exit criteria: Documented acceptance evidence and authorization for the next deployment stage.
+
+---
+
+16. Development Allocation & Investment Framework
+
+Funding allocation should be tied to milestones and independently verifiable deliverables.
+
+The following is a proposed planning allocation, not a confirmed budget.
+
+Development category| Allocation
+Core infrastructure and integration| 25%
+Security and cryptographic engineering| 20%
+World Chat and communication| 15%
+Xenograph Analytics and integrity| 15%
+Card Conduit and marketplace| 10%
+Payment and escrow validation| 10%
+Governance, documentation and contingency| 5%
+Total| 100%
+
+Funding should be released against milestone acceptance rather than broad statements of completion.
+
+16.1 Investment evidence
+
+Required evidence includes:
+
+- Demonstrable prototypes.
+- Source-code repository history.
+- Reproducible tests.
+- Architecture documentation.
+- Security findings.
+- Remediation records.
+- Operational performance measurements.
+- User trial results.
+- Documented cost estimates.
+- Commercial demand validation.
+
+No projected valuation or revenue multiple should be presented as established without supporting market and financial evidence.
+
+---
+
+17. Governance & Institutional Accountability
+
+The platform should distinguish technical authority, financial authority, and governance authority.
+
+17.1 Governance requirements
+
+- Documented administrative permissions.
+- Independent review of privileged actions.
+- Defined dispute-resolution procedures.
+- Published policy versions.
+- Evidence-preservation procedures.
+- Conflict-of-interest disclosure.
+- Incident reporting.
+- User appeals.
+- Change-management records.
+
+17.2 Institutional Communication Integrity
+
+Communications and administrative decisions should preserve:
+
+- Original submission.
+- Submission timestamp.
+- Responsible recipient.
+- Acknowledgment status.
+- Subsequent amendments.
+- Supporting evidence.
+- Decision authority.
+- Final disposition.
+
+The system should distinguish receipt, acknowledgment, review, and resolution.
+
+17.3 Governance principle
+
+Institutional authority does not replace documentary evidence.
+
+A recorded decision must remain distinguishable from the evidence used to support it.
+
+---
+
+18. Unified Acceptance & Verification Matrix
+
+System| Minimum demonstration
+Ground Zero| Service isolation and recovery
+Xenograph| Reproducible analytical outputs
+World Chat| Authenticated cross-platform messaging
+Call Cards| Creation, verification and revocation
+Mesh| Local peer communication
+SOS| Permission-controlled emergency signaling
+Card Conduit| Deterministic rule execution
+EZnvoice| Reconciled invoice lifecycle
+Payments| Idempotent execution and verified status
+Escrow| Correct conditional release
+Auctions| Valid bid ordering and settlement
+Integrity Ledger| Independent hash and signature verification
+Governance| Auditable administrative actions
+
+Each acceptance result should include:
+
+- Test identifier.
+- Requirement reference.
+- Test environment.
+- Input data.
+- Expected result.
+- Actual result.
+- Execution timestamp.
+- Responsible reviewer.
+- Supporting evidence.
+- Pass/fail status.
+- Remediation reference where necessary.
+
+A requirement is not complete merely because its documentation exists.
+
+---
+
+19. Open Engineering Decisions
+
+The following decisions remain unresolved and must be closed before production implementation.
+
+1. Which blockchain network will be used for initial escrow testing?
+2. Which payment provider will supply the initial sandbox?
+3. Which cryptographic identity standard will be adopted?
+4. Which mesh transport technologies will be supported?
+5. What is the canonical database and event-storage design?
+6. Which auction format will be implemented first?
+7. What are the precise Card Conduit rules and color-combination definitions?
+8. Who can authorize escrow releases and emergency interventions?
+9. What are the retention and deletion requirements for communications?
+10. What jurisdictional and regulatory obligations apply to each financial and marketplace function?
+
+These decisions should be maintained in a version-controlled Architecture Decision Record (ADR) register.
+
+---
+
+20. Final Architectural Declaration
+
+Humanitarian_Project (+1HP) is proposed as an integrated modernization initiative combining communication infrastructure, analytical intelligence, interactive digital assets, financial coordination, cryptographic evidence preservation, and accountable governance.
+
+Its defining architectural characteristic is not the use of blockchain alone.
+
+It is the separation of functions and authorities into independently verifiable components operating through documented interfaces.
+
+World Chat enables communication.
+
+Card Conduit enables interactive participation.
+
+EZnvoice coordinates commercial obligations.
+
+Payment adapters execute financial transactions.
+
+Escrow coordinates conditional settlement.
+
+Auctions coordinate competitive exchange.
+
+Xenograph Analytics evaluates relationships and operational evidence.
+
+The Tri-Layer Integrity Ledger preserves and verifies records.
+
+Ground Zero™ provides the shared modernization environment.
+
+Together, these components form the proposed +1HP technical ecosystem.
+
+Governing maxim:
+
+Precision establishes measurement.
+
+Cryptography establishes verifiability.
+
+Evidence establishes integrity.
+
+Governance establishes accountability.
+
+HUMANITARIAN_PROJECT (+1HP)
+
+Epistemic Articulacy · Modernization Integrity
+
+Law Is To Be Made Clear.
+
+---
+
+DOCUMENT CONTROL
+
+Document ID: HP-MTA-001
+Version: 1.0
+Classification: Proposed Technical Architecture
+Principal / Recteur: Jonathan Edward Bower
+Status: Baseline for Engineering Review
+Supersedes: No prior unified master architecture
+
+Change control: All material architectural amendments must be versioned, documented, reviewed, and accompanied by an impact assessment.
+
+End of document.
